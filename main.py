@@ -1,5 +1,4 @@
 from re import sub
-from pprint import pprint
 from csv import reader, writer
 
 
@@ -47,9 +46,7 @@ with open('phonebook_raw.csv', 'r', encoding='utf-8') as f1, open('phonebook.csv
                 continue
             a = set(contacts_list1[i][:3]) & set(contacts_list1[j][:3])
             if len(a) != 0:
-                print(a, i, j)
                 del_list.append(j)
-                # print(contacts_list1[i])
                 for n in range(len(contacts_list1[i])):
                     if contacts_list1[i][n] == '':
                         contacts_list1[i][n] = contacts_list1[j][n]
